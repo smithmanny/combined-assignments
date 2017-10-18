@@ -21,7 +21,7 @@ public class SimplifiedRational implements IRational {
 		if (a <= 0 || b < 0) {
 			throw new IllegalArgumentException();
 		}
-		
+
 		if (b == 0) {
 			return a;
 		}
@@ -53,7 +53,7 @@ public class SimplifiedRational implements IRational {
 
 		arr[0] = numerator / gcm;
 		arr[1] = denominator / gcm;
-		
+
 		return arr;
 	}
 
@@ -77,11 +77,11 @@ public class SimplifiedRational implements IRational {
 			throw new IllegalArgumentException();
 		}
 
-		int[] simplified = new int[]{numerator, denominator};
-		if(numerator != 0) {
+		int[] simplified = new int[] { numerator, denominator };
+		if (numerator != 0) {
 			simplified = simplify(numerator, denominator);
 		}
-		
+
 		this.num = simplified[0];
 		this.den = simplified[1];
 	}
@@ -125,7 +125,7 @@ public class SimplifiedRational implements IRational {
 		}
 
 		simplify(numerator, denominator);
-		
+
 		return new SimplifiedRational(numerator, denominator);
 	}
 
