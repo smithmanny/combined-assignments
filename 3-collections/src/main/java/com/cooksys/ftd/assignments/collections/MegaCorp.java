@@ -1,13 +1,19 @@
 package com.cooksys.ftd.assignments.collections;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 import com.cooksys.ftd.assignments.collections.hierarchy.Hierarchy;
 import com.cooksys.ftd.assignments.collections.model.Capitalist;
 import com.cooksys.ftd.assignments.collections.model.FatCat;
+
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
-import java.util.*;
-
 public class MegaCorp implements Hierarchy<Capitalist, FatCat> {
+	
+	HashSet list = new HashSet(); 
 
     /**
      * Adds a given element to the hierarchy.
@@ -29,7 +35,11 @@ public class MegaCorp implements Hierarchy<Capitalist, FatCat> {
      */
     @Override
     public boolean add(Capitalist capitalist) {
-        throw new NotImplementedException();
+    	if(list.contains(capitalist)) {
+    		return false;
+    	}
+    	
+    	return true;
     }
 
     /**
@@ -38,7 +48,10 @@ public class MegaCorp implements Hierarchy<Capitalist, FatCat> {
      */
     @Override
     public boolean has(Capitalist capitalist) {
-        throw new NotImplementedException();
+        if (list.contains(capitalist.getName())) {
+        	return true;
+        }
+        return false;
     }
 
     /**
@@ -47,7 +60,9 @@ public class MegaCorp implements Hierarchy<Capitalist, FatCat> {
      */
     @Override
     public Set<Capitalist> getElements() {
-        throw new NotImplementedException();
+        for(String s : list) {
+        	
+        }
     }
 
     /**
