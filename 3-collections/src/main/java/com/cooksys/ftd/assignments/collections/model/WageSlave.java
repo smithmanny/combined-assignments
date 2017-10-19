@@ -3,13 +3,12 @@ package com.cooksys.ftd.assignments.collections.model;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class WageSlave implements Capitalist {
-	Integer salary;
-	String name;
+	private int salary;
+	private String name;
 	FatCat parent;
 
     public WageSlave(String name, int salary) {
-        this.name = name;
-        this.salary = salary;
+        this(name, salary, null);
     }
 
     public WageSlave(String name, int salary, FatCat owner) {
@@ -39,10 +38,10 @@ public class WageSlave implements Capitalist {
      */
     @Override
     public boolean hasParent() {
-        if (parent != null) {
-        	return true;
+        if(parent == null) {
+        	return false;
         }
-        return false;
+        return true;
     }
 
     /**
@@ -50,9 +49,6 @@ public class WageSlave implements Capitalist {
      */
     @Override
     public FatCat getParent() {
-    	if (hasParent() == true) {
-    		return parent;
-    	}
-    	return null;
+    	return parent;
     }
 }
