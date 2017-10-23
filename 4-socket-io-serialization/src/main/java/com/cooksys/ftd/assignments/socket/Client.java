@@ -39,6 +39,7 @@ public class Client {
 		} catch (Exception e) {
 			// TODO: handle exception
 		} finally {
+			System.out.println(student.toString());
 			try {
 				server.close();
 			} catch (IOException e) {
